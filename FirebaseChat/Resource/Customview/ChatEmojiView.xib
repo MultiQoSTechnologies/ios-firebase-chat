@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ChatEmojiView" customModule="FirebaseChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-zK-6qz">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="btnCloseWithSender:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="yeU-ha-yP7"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFc-hP-pJq">
+                    <rect key="frame" x="32" y="44" width="350" height="70"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GHC-6a-FpQ">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5oA-Xl-wHu">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="i5M-Pr-FkT" id="9uk-QX-CPz"/>
+                                <outlet property="delegate" destination="i5M-Pr-FkT" id="9rk-qm-WeK"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="1L6-9n-AAE"/>
+                        <constraint firstItem="GHC-6a-FpQ" firstAttribute="leading" secondItem="QFc-hP-pJq" secondAttribute="leading" id="OAb-BY-yN0"/>
+                        <constraint firstAttribute="bottom" secondItem="GHC-6a-FpQ" secondAttribute="bottom" id="XfU-lU-RnY"/>
+                        <constraint firstAttribute="trailing" secondItem="GHC-6a-FpQ" secondAttribute="trailing" id="Z7Z-N5-Thw"/>
+                        <constraint firstItem="GHC-6a-FpQ" firstAttribute="top" secondItem="QFc-hP-pJq" secondAttribute="top" id="yQn-ea-xk1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="QFc-hP-pJq" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" constant="-32" id="5wI-bY-ZwP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sBV-zK-6qz" secondAttribute="bottom" id="GGB-cI-S7g"/>
+                <constraint firstItem="QFc-hP-pJq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="KRL-Jp-cxx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sBV-zK-6qz" secondAttribute="trailing" id="Q97-56-9mt"/>
+                <constraint firstItem="sBV-zK-6qz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S4b-0f-Udt"/>
+                <constraint firstItem="QFc-hP-pJq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hvm-ae-eS3"/>
+                <constraint firstItem="sBV-zK-6qz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="w7B-Mk-la2"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionEmoji" destination="GHC-6a-FpQ" id="xwc-Cj-jnD"/>
+                <outlet property="topConstrin" destination="hvm-ae-eS3" id="Cdc-ma-2Hd"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="71"/>
+        </view>
+    </objects>
+</document>
